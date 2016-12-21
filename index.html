@@ -4,11 +4,11 @@
 <script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <head>  
+ 
  <script language="javascript">  
-  function print(){  
-   var a=myform.name.value;  
-   window.location.href=a;
-  }  
+  $( "#fulltarget" ).click(function() {
+  alert( "Handler for .click() called." );
+  });
  </script>  
  </head>  
  <body>  
@@ -17,6 +17,6 @@
    <input type="button" name="button" value="跳转" onclick="print()" />  
   </form>    
   <a href = "qqlivebroadcast://views/ScheduleDetailView?id=200142">演唱会预约页</a>
-  <button type="button" class="btn btn-lg btn-primary">Primary</button>
+  <button type="button" id="fulltarget" class="btn btn-lg btn-primary">确定</button>
  </body>  
 </html>
