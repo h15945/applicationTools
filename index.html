@@ -14,6 +14,10 @@
    var a=myform2.name.value;  
    window.location.href="qqlivebroadcast://views/ScheduleDetailView?id="+a;
   }  
+  function print3(){  
+   var a=myform2.name.value;  
+   window.location.href="qqlivebroadcast://views/ActorSpaceView?account_id="+a+"&account_type=0";
+  }  
  </script>  
  </head>  
  <body>  
@@ -28,13 +32,17 @@
   </form> 
  <h1>
    <div class="alert alert-success" role="alert">
-      <strong>只输入pid</strong> 
+      <strong>输入参数(pid或vuid)</strong> 
    </div>
  </h1>
   <form name="myform2">  
    <input type="textarea" class="form-control input-lg" name="name" id="nn" />  
-   <input type="button" name="button" class="btn btn-lg btn-primary" value="确定" onclick="print2()" />      
+   <input type="button" name="button" class="btn btn-lg btn-primary" value="跳转播放器" onclick="print2()" />   
+   <input type="button" name="button" class="btn btn-lg btn-primary" value="跳转个人页" onclick="print3()" />   
   </form>    
+  
+
+  
   <h1>
    <div class="alert alert-success" role="alert">
       <strong>工具</strong> 
