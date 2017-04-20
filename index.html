@@ -12,12 +12,14 @@
   } 
   function print2(){  
    var a=myform2.name.value;  
-   window.location.href="qqlivebroadcast://views/ScheduleDetailView?id="+a;
+   window.location.href="qqlivebroadcast"+ appendix + "://views/ScheduleDetailView?id="+a;
   }  
   function print3(){  
    var a=myform2.name.value;  
-   window.location.href="qqlivebroadcast://views/ActorSpaceView?account_id="+a+"&account_type=0";
+   window.location.href="qqlivebroadcast"+ appendix + "://views/ActorSpaceView?account_id="+a+"&account_type=0";
   }  
+  var appendix = getParameterByName('appendix'); 
+  console.log('appendix is ' + appendix);
  </script>  
  </head>  
  <body>  
