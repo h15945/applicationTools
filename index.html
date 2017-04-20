@@ -24,7 +24,11 @@
   function print2(){  
    var a=myform2.name.value;  
    window.location.href="qqlivebroadcast"+ appendix + "://views/ScheduleDetailView?id="+a;
-  }  
+  }
+  function print4(){  
+   var a=myform2.name.value;  
+   window.location.href="qqlivebroadcast"+ appendix + "://views/LiveDetailView?program_id="+a;
+  }
   function print3(){  
    var a=myform2.name.value;  
    window.location.href="qqlivebroadcast"+ appendix + "://views/ActorSpaceView?account_id="+a+"&account_type=0";
@@ -50,7 +54,8 @@
  </h1>
   <form name="myform2">  
    <input type="textarea" class="form-control input-lg" name="name" id="nn" />  
-   <input type="button" name="button" class="btn btn-lg btn-primary" value="跳转播放器" onclick="print2()" />   
+   <input type="button" name="button" class="btn btn-lg btn-primary" value="跳转预告页" onclick="print2()" />
+   <input type="button" name="button" class="btn btn-lg btn-primary" value="跳转播放器" onclick="print4()" />  
    <input type="button" name="button" class="btn btn-lg btn-primary" value="跳转个人页" onclick="print3()" />   
   </form>    
   
