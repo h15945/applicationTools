@@ -34,6 +34,9 @@
    window.location.href="qqlivebroadcast"+ appendix + "://views/ActorSpaceView?account_id="+a+"&account_type=0";
   }  
   var appendix = getParameterByName('appendix'); 
+  if(!appendix){
+   appendix = '';
+  }
   console.log('appendix is ' + appendix);
   function print6(){
    window.location.href="qqlivebroadcast"+ appendix + "://host?stage=production";
