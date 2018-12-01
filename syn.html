@@ -1,0 +1,89 @@
+
+<html>  
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+<script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<head>  
+ 
+ <script language="javascript">  
+  function getParameterByName(name, url) {
+    if (!url) {
+      url = window.location.href;
+    }
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+  }
+  function print(){  
+   var a=myform.name.value;  
+   window.location.href=a;
+  } 
+  function print2(){  
+   var a=myform2.name.value;  
+   window.location.href="synopsis"+ appendix + "://views/ScheduleDetailView?id="+a;
+  }
+  function print4(){  
+   var a=myform2.name.value;  
+   window.location.href="synopsis"+ appendix + "://views/LiveDetailView?program_id="+a;
+  }
+  function print3(){  
+   var a=myform2.name.value;  
+   window.location.href="synopsis"+ appendix + "://views/ActorSpaceView?account_id="+a+"&account_type=0";
+  }  
+  var appendix = getParameterByName('appendix'); 
+  if(!appendix){
+   appendix = '';
+  }
+  console.log('appendix is ' + appendix);
+  function print6(){
+   window.location.href="synopsis"+ appendix + "://host?stage=production";
+  }
+  function print7(){
+   window.location.href="synopsis"+ appendix + "://host?stage=test";
+  }
+ </script>  
+ </head>  
+ <body>  
+ <h1>
+   <div class="alert alert-success" role="alert">
+      <strong>输入完整连接</strong> 
+   </div>
+ </h1>
+  <form name="myform">  
+   <input type="textarea" class="form-control input-lg" name="name" id="nn" />  
+   <input type="button" name="button" class="btn btn-lg btn-primary" value="确定" onclick="print()" />      
+  </form> 
+ <h1>
+   <div class="alert alert-success" role="alert">
+      <strong>输入参数(pid或vuid)</strong> 
+   </div>
+ </h1>
+  <form name="myform2">  
+   <input type="textarea" class="form-control input-lg" name="name" id="nn" />  
+   <input type="button" name="button" class="btn btn-lg btn-primary" value="跳转预告页" onclick="print2()" />
+   <input type="button" name="button" class="btn btn-lg btn-primary" value="跳转播放器" onclick="print4()" />  
+   <input type="button" name="button" class="btn btn-lg btn-primary" value="跳转个人页" onclick="print3()" />   
+  </form>    
+  
+
+  
+  <h1>
+   <div class="alert alert-success" role="alert">
+      <strong>工具</strong> 
+   </div>
+ </h1>
+  <h1>
+        <a href = "synopsis://?action=shareLog" class="label label-primary">发送日志</a>
+  </h1>
+    <h1>
+        <div class="alert alert-success" role="alert">
+          <strong>App环境切换</strong> 
+        </div>
+        <a href = "#" onclick="print6()" class="label label-primary"><script language='javascript'>document.write(appendix)</script>正式环境</a>
+        <a href = "#" onclick="print7()" class="label label-primary"><script language='javascript'>document.write(appendix)</script>测试环境</a>
+  </h1>
+ </body>  
+</html>
